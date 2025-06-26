@@ -41,7 +41,7 @@ export function LandingPage() {
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Clock className="h-8 w-8 text-amber-400" />
-              <span className="text-xl font-bold font-serif">Histora.ai</span>
+                              <span className="text-xl font-bold font-serif">Histora</span>
             </div>
             <button
               onClick={() => setShowAuthModal(true)}

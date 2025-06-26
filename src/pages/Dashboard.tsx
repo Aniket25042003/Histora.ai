@@ -128,7 +128,7 @@ export function Dashboard() {
             <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
               <Clock className="h-8 w-8 text-amber-400" />
-              <span className="text-xl font-bold font-serif">Histora.ai</span>
+                              <span className="text-xl font-bold font-serif">Histora</span>
             </div>
               
               <div className="flex items-center space-x-4">
@@ -223,7 +223,7 @@ export function Dashboard() {
 
           {/* Diary Entries */}
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold font-serif mb-8 text-center">Your Histora.ai Journal</h2>
+            <h2 className="text-3xl font-bold font-serif mb-8 text-center">Your Histora Journal</h2>
             
             {loading ? (
               <div className="text-center py-12">
