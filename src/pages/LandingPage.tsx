@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Clock, Lock, Sparkles, Users, BookOpen, ArrowRight } from 'lucide-react'
+import { Clock, Lock, Sparkles, Users, BookOpen, ArrowRight, ExternalLink } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 import { AuthModal } from '../components/AuthModal'
@@ -41,15 +41,34 @@ export function LandingPage() {
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Clock className="h-8 w-8 text-amber-400" />
-                              <span className="text-xl font-bold font-serif">Histora</span>
+              <span className="text-xl font-bold font-serif">Histora</span>
             </div>
-            <button
-              onClick={() => setShowAuthModal(true)}
-              disabled={loading}
-              className="bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 disabled:opacity-50"
-            >
-              {loading ? 'Loading...' : 'Get Started'}
-            </button>
+            <div className="flex items-center space-x-4">
+              {/* Bolt.new Badge */}
+              <a
+                href="https://bolt.new/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-amber-400/50 px-3 py-2 rounded-lg transition-all duration-300 hover:scale-105"
+              >
+                <img 
+                  src="/bolt.svg" 
+                  alt="Built with Bolt.new" 
+                  className="h-5 w-auto"
+                />
+                <span className="text-xs text-slate-300 group-hover:text-white transition-colors">
+                  Built with Bolt
+                </span>
+                <ExternalLink className="h-3 w-3 text-slate-400 group-hover:text-amber-400 transition-colors" />
+              </a>
+              <button
+                onClick={() => setShowAuthModal(true)}
+                disabled={loading}
+                className="bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 disabled:opacity-50"
+              >
+                {loading ? 'Loading...' : 'Get Started'}
+              </button>
+            </div>
           </nav>
         </header>
 
@@ -168,8 +187,66 @@ export function LandingPage() {
 
         {/* Footer */}
         <footer className="container mx-auto px-6 py-8 border-t border-slate-700/50">
-          <div className="text-center text-slate-400">
-            <p>Built with Bolt.new • Powered by Tavus, LiveKit, and Supabase</p>
+          <div className="flex flex-col items-center space-y-6">
+            {/* Partner Logos */}
+            <div className="flex flex-col items-center space-y-4">
+              <p className="text-slate-400 text-sm">Powered by</p>
+              <div className="flex items-center justify-center space-x-8 md:space-x-12">
+                <a
+                  href="https://bolt.new/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group transition-all duration-300 hover:scale-110"
+                >
+                  <img 
+                    src="/bolt.svg" 
+                    alt="Bolt.new" 
+                    className="h-8 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+                <a
+                  href="https://supabase.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group transition-all duration-300 hover:scale-110"
+                >
+                  <img 
+                    src="/supabase.svg" 
+                    alt="Supabase" 
+                    className="h-8 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+                <a
+                  href="https://www.netlify.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group transition-all duration-300 hover:scale-110"
+                >
+                  <img 
+                    src="/netlify.svg" 
+                    alt="Netlify" 
+                    className="h-8 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+                <a
+                  href="https://www.tavus.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group transition-all duration-300 hover:scale-110"
+                >
+                  <img 
+                    src="/tavus.svg" 
+                    alt="Tavus" 
+                    className="h-8 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+              </div>
+            </div>
+            
+            {/* Copyright */}
+            <div className="text-center text-slate-400">
+              <p>© 2025 Histora. Experience history through conversation.</p>
+            </div>
           </div>
         </footer>
       </div>
